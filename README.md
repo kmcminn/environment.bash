@@ -1,4 +1,7 @@
 environment.bash
 ================
 
-personal environment scripts and bits for day to day use in cygwin and ubuntu
+My environment scripts and bits
+
+cygwin/
+* basic bashrc, ssh config, screen rc, etc
