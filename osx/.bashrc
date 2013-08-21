@@ -39,7 +39,7 @@ alias cwd='echo $cwd'
 # alias ff='find . -name \!:1 -print'      # ff x => find file named x
 alias line='sed -n '\''\!:1 p'\'' \!:2'    # line 5 file => show line 5 of file
 alias l='ls -lGaph'
-alias ll='ls -lagG \!* | more'
+alias ll='ls -lGaphT | less'
 # alias rehash='hash -r'
 alias rehash='source ~/.profile'
 alias word='grep \!* /usr/share/dict/web2' # Grep thru dictionary
