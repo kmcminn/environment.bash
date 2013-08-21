@@ -161,6 +161,9 @@ PS1="\[$TXTCYN\]\u\[$TXTWHT\]@\[$TXTGRN\]\H\[$TXTWHT\]:\[$TXTYLW\]\w ${BRIGHT_RE
  
 # export EDITOR=mate
 export EDITOR=vim
+
+# java home for osx
+export JAVA_HOME=$(/usr/libexec/java_home)
  
 # RVM integration
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
