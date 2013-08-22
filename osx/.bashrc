@@ -1,19 +1,17 @@
 # bits taken from https://gist.github.com/pmarreck/2046249
 
 # Move /usr/local/bin to the front of PATH by subbing it out and prepending
-export PATH=/usr/local/bin:${PATH/\/usr\/local\/bin:/}:~/bin
+export PATH=/usr/local/bin:${PATH/\/usr\/local\/bin:/}:~/bin:/Applications/Grails/grails-2.2.4/bin
  
 # stop checking for mail
 unset MAILCHECK
  
+set bell-style visible
 # command history tweaks
 shopt -s histappend
-export PROMPT_COMMAND='history -a'
 export HISTCONTROL="ignoredups"
 export HISTIGNORE="&:[bf]g:exit"
 shopt -s cmdhist
- 
-set bell-style visible
  
 # Pager config (ex., for git diff output)
 #E=quit at first EOF
@@ -109,7 +107,8 @@ function mbr {
  
 # change the title of the OS X terminal window
 # See http://hints.macworld.com/article.php?story=20031015173932306
-export PROMPT_COMMAND='echo -ne "\033]0;$@\007"'
+# PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+# export PROMPT_COMMAND='echo -ne "\033]0;$@\007"'
  
 # Color constants
 NO_COLOR='\e[0m' #disable colors
@@ -157,6 +156,8 @@ source ~/.bash_git2
  
 # Command prompt config
 PS1="\[$TXTCYN\]\u\[$TXTWHT\]@\[$TXTGRN\]\H\[$TXTWHT\]:\[$TXTYLW\]\w ${BRIGHT_RED}\$(parse_git_branch)\$\[$NO_COLOR\] "
+export PROMPT_COMMAND='history -a; echo -ne "\033]0;$USER@`hostname`:${PWD/$HOME/~}\007"'
+
 # export PS1="\W @ \h (\u) \$ "
  
 # export EDITOR=mate
@@ -164,6 +165,8 @@ export EDITOR=vim
 
 # java home for osx
 export JAVA_HOME=$(/usr/libexec/java_home)
+export GRAILS_HOME=/Applications/Grails/grails-2.2.4
+
  
 # RVM integration
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
