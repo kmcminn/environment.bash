@@ -42,6 +42,23 @@ ll() {
     CLICOLOR_FORCE=1 ls -lGaph $1 | less -R
 }
 
+yoloc() {
+    local message=$@
+
+    if [[ "${#message}" -lt "1" ]]; then
+        echo "yolo commit: type a commit message and push to master"
+        echo "--> err: you didn't type a message"
+        return
+    else
+        git add .
+        git commit -am "$message"
+        git pull
+        git push
+    fi
+}
+    
+    
+
 alias rehash='source ~/.profile'
 alias word='grep \!* /usr/share/dict/web2' # Grep thru dictionary
 #alias tophog='top -ocpu -s 3'
